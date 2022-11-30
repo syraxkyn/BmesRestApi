@@ -1,6 +1,6 @@
-﻿namespace BmesRestApi.Messages.Request.Brand
+﻿namespace BmesRestApi.Messages.Request.Product
 {
-    public class FetchProductRequest
+    public class FetchProductsRequest
     {
         public int PageNumber { get; set; }
         public int ProductsPerPage { get; set; }

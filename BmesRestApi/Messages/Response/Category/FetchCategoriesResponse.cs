@@ -1,8 +1,8 @@
 ﻿using BmesRestApi.Messages.DataTransferObjects.Product;
 
-namespace BmesRestApi.Messages.Response.Brand
+namespace BmesRestApi.Messages.Response.Category
 {
-    public class FetchCategoryResponse:ResponseBase
+    public class FetchCategoriesResponse:ResponseBase
     {
         public int CategoriesPerPage { get; set; }
         public bool HasPreviousPages { get; set; }

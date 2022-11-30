@@ -1,6 +1,6 @@
 ﻿namespace BmesRestApi.Messages.Request.Brand
 {
-    public class DeleteCategory
+    public class DeleteBrandRequest
     {
         public long Id { get; set; }
     }

@@ -1,6 +1,6 @@
 ﻿namespace BmesRestApi.Messages.Request.Product
 {
-    public class GetProductRequest
+    public class DeleteProductRequest
     {
         public long Id { get; set; }
     }

@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Messages\DataTransferObjects\Shared\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

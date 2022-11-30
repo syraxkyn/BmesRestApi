@@ -17,7 +17,7 @@ namespace BmesRestApi.Repository.Implementations
             return brand;
         }
 
-        public IEnumerable<Brand> GetAllBrand()
+        public IEnumerable<Brand> GetAllBrands()
         {
             var categories = _context.Brands;
             return categories;

@@ -1,14 +1,14 @@
 ﻿using BmesRestApi.Messages.DataTransferObjects.Product;
 
-namespace BmesRestApi.Messages.Response.Brand
+namespace BmesRestApi.Messages.Response.Product
 {
-    public class FetchBrandResponse:ResponseBase
+    public class FetchProductsResponse:ResponseBase
     {
-        public int BrandsPerPage { get; set; }
+        public int ProductsPerPage { get; set; }
         public bool HasPreviousPages { get; set; }
         public bool HasNextPages { get; set; }
         public int CurrentPage { get; set; }
         public int[] Pages { get; set; }
-        public IEnumerable<BrandDto> Brands { get; set; }
+        public IEnumerable<ProductDto> Products { get; set; }
     }
 }

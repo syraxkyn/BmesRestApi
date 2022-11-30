@@ -1,6 +1,6 @@
 ﻿using BmesRestApi.Messages.DataTransferObjects.Product;
 
-namespace BmesRestApi.Messages.Request.Brand
+namespace BmesRestApi.Messages.Request.Product
 {
     public class UpdateProductRequest
     {

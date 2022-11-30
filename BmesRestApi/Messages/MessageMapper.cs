@@ -56,20 +56,19 @@ namespace BmesRestApi.Messages
         }
         public CategoryDto MapToCategoryDto(Category category)
         {
-            var categoryDto = new CategoryDto();
-            if (category!=null)
+            return new CategoryDto
             {
-                categoryDto.Id = category.Id;
-                categoryDto.Name = category.Name;
-                categoryDto.Slug = category.Slug;
-                categoryDto.Description = category.Description;
-                categoryDto.MetaDescription = category.MetaDescription;
-                categoryDto.MetaKeywords = category.MetaKeywords;
-                categoryDto.CategoryStatus = (int)category.CategoryStatus;
-                categoryDto.ModifiedDate = category.ModifiedDate;
-                categoryDto.IsDeleted = category.IsDeleted;
-            }
-            return categoryDto;
+
+                Id = category.Id,
+                Name = category.Name,
+                Slug = category.Slug,
+                Description = category.Description,
+                MetaDescription = category.MetaDescription,
+                MetaKeywords = category.MetaKeywords,
+                CategoryStatus = (int)category.CategoryStatus,
+                ModifiedDate = category.ModifiedDate,
+                IsDeleted = category.IsDeleted
+            };
         }
         public Product MapToProduct(ProductDto productDto)
         {
@@ -125,6 +124,37 @@ namespace BmesRestApi.Messages
                 productDto.IsDeleted = product.IsDeleted;
             }
             return productDto;
+        }
+
+        public List<BrandDto> MapToBrandDtos(IEnumerable<Brand> brands)
+        {
+            var brandDtos = new List<BrandDto>();
+            foreach(var brand in brands)
+            {
+                var brandDto = MapToBrandDto(brand);
+                brandDtos.Add(brandDto);
+            }
+            return brandDtos;
+        }
+        public List<CategoryDto> MapToCategoryDtos(IEnumerable<Category> categories)
+        {
+            var categoryDtos = new List<CategoryDto>();
+            foreach(var category in categories)
+            {
+                var categoryDto = MapToCategoryDto(category);
+                categoryDtos.Add(categoryDto);
+            }
+            return categoryDtos;
+        }
+        public List<ProductDto> MapToProductDtos(IEnumerable<Product> products)
+        {
+            var productsDto = new List<ProductDto>();
+            foreach(var product in products)
+            {
+                var productDto = MapToProductDto(product);
+                productsDto.Add(productDto);
+            }
+            return productsDto;
         }
     }
 }

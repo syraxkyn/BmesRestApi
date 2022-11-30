@@ -1,4 +1,4 @@
-﻿namespace BmesRestApi.Messages.Response.Brand
+﻿namespace BmesRestApi.Messages.Response.Product
 {
     public class UpdateProductResponse:ResponseBase
     {

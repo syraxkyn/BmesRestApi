@@ -1,6 +1,6 @@
-﻿namespace BmesRestApi.Messages.Request.Brand
+﻿namespace BmesRestApi.Messages.Request.Category
 {
-    public class FetchCategoryRequest
+    public class FetchCategoriesRequest
     {
         public int PageNumber { get; set; }
         public int CategoriesPerPage { get; set; }

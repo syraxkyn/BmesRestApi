@@ -1,6 +1,6 @@
 ﻿using BmesRestApi.Messages.DataTransferObjects.Product;
 
-namespace BmesRestApi.Messages.Response.Brand
+namespace BmesRestApi.Messages.Response.Product
 {
     public class GetProductResponse:ResponseBase
     {

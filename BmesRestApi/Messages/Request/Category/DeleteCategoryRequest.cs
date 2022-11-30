@@ -1,6 +1,6 @@
 ﻿namespace BmesRestApi.Messages.Request.Category
 {
-    public class GetCategoryRequest
+    public class DeleteCategoryRequest
     {
         public long Id { get; set; }
     }

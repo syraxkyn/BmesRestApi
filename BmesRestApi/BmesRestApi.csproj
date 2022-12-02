@@ -21,9 +21,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Messages\DataTransferObjects\Shared\" />
+    <Folder Include="Messages\DataTransferObjects\Order\" />
     <Folder Include="Messages\Request\Cart\" />
+    <Folder Include="Messages\Request\Checkout\" />
+    <Folder Include="Messages\Request\Order\" />
     <Folder Include="Messages\Response\Cart\" />
+    <Folder Include="Messages\Response\Checkout\" />
+    <Folder Include="Messages\Response\Order\" />
   </ItemGroup>
 
 </Project>

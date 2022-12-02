@@ -1,4 +1,6 @@
 using BmesRestApi.Database;
+using BmesRestApi.Repositories;
+using BmesRestApi.Repositories.Implementations;
 using BmesRestApi.Repository;
 using BmesRestApi.Repository.Implementations;
 using BmesRestApi.Services;
@@ -29,11 +31,19 @@ builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<ICartRepository, CartRepository>();
 builder.Services.AddTransient<ICartItemRepository, CartItemRepository>();
 
+builder.Services.AddTransient<IAddressRepository,AddressRepository>();
+builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
+builder.Services.AddTransient<IPersonRepository,PersonRepository>();
+builder.Services.AddTransient<IOrderRepository, OrderRepository>();
+builder.Services.AddTransient<IOrderItemRepository, OrderItemRepository>();
+
 builder.Services.AddTransient<IBrandService, BrandService>();
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IProductService, ProductService>();
 builder.Services.AddTransient<ICatalogueService, CatalogueService>();
 builder.Services.AddTransient<ICartService,CartService>();
+builder.Services.AddTransient<IOrderService,OrderService>();
+builder.Services.AddTransient<ICheckoutService,CheckoutService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 var app = builder.Build();

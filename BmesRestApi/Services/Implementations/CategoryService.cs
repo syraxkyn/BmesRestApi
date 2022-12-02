@@ -35,7 +35,7 @@ namespace BmesRestApi.Services.Implementations
             if (updateCategoryRequest.Id==updateCategoryRequest.Category.Id)
             {
                 var category = _messageMapper.MapToCategory(updateCategoryRequest.Category);
-                _categoryRepository.SaveCategory(category);
+                _categoryRepository.UpdateCategory(category);
 
                 var categoryDto = _messageMapper.MapToCategoryDto(category);
 

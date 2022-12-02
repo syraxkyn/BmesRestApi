@@ -49,7 +49,7 @@ namespace BmesRestApi.Controllers
             var deleteBrandResponse = _brandService.DeleteBrand(deleteBrandRequest);
             return deleteBrandResponse;
         }
-        [HttpPut("{id}")]
+        [HttpPut]
         public ActionResult<UpdateBrandResponse> PutBrand(UpdateBrandRequest updateBrandRequest)
         {
             var updateBrandResponse = _brandService.EditBrand(updateBrandRequest);

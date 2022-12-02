@@ -43,7 +43,7 @@ namespace BmesRestApi.Services.Implementations
             if (updateBrandRequest.Id==updateBrandRequest.Brand.Id)
             {
                 var brand = _messageMapper.MapToBrand(updateBrandRequest.Brand);
-                _brandRepository.SaveBrand(brand);
+                _brandRepository.UpdateBrand(brand);
 
                 var brandDto = _messageMapper.MapToBrandDto(brand);
 

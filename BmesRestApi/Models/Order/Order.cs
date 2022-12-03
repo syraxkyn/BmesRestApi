@@ -6,9 +6,9 @@
     using Address;
     public class Order : BaseObject
     {
-        public decimal OrderTotal { get; set; }
-        public decimal OrderItemTotal { get; set; }
-        public decimal ShippingCharge { get; set; }
+        public int OrderTotal { get; set; }
+        public int OrderItemTotal { get; set; }
+        public int ShippingCharge { get; set; }
         public long CustomerId { get; set; }
         public Customer Customer { get; set; }
         public OrderStatus OrderStatus { get; set; }

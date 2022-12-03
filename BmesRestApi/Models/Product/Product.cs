@@ -11,9 +11,9 @@ namespace BmesRestApi.Models.Product
         public string MetaKeywords { get; set; }
         public string SKU { get; set; }
         public string Model { get; set; }
-        public decimal Price { get; set; }
-        public decimal SalePrice { get; set; }
-        public decimal OldPrice { get; set; }
+        public int Price { get; set; }
+        public int SalePrice { get; set; }
+        public int OldPrice { get; set; }
         public string ImageUrl { get; set; }
         public int QuantityInStock { get; set; }
         public bool IsBestseller { get; set; }

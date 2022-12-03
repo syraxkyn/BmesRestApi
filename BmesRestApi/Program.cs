@@ -21,9 +21,13 @@ builder.Services.AddDistributedMemoryCache();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<BmesDbContext>(options => options.UseSqlite(
-    builder.Configuration["Data:BmesApi:ConnectionString"]
-    ));
+//builder.Services.AddDbContext<BmesDbContext>(options => options.UseSqlServer(
+//    builder.Configuration["Data:BmesApi:ConnectionString"]
+//    ));
+builder.Services.AddDbContext<BmesDbContext>(options => options.UseSqlServer(
+builder.Configuration.GetConnectionString("DefaultConnection")
+)
+);
 builder.Services.AddTransient<IBrandRepository, BrandRepository>();
 builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();

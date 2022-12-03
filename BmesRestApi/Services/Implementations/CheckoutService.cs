@@ -67,7 +67,7 @@ namespace BmesRestApi.Services.Implementations
             {
                 var cartItems = _cartItemRepository.FindCartItemsByCartId(cart.Id);
                 var cartTotal = _cartService.GetCartTotal();
-                decimal shippingCharge = 0;
+                int shippingCharge = 0;
                 var orderTotal = cartTotal + shippingCharge;
 
                 var order = new Order

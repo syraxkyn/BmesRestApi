@@ -1,5 +1,6 @@
 ﻿using BmesRestApi.Database;
 using BmesRestApi.Models.Product;
+using Microsoft.EntityFrameworkCore;
 
 namespace BmesRestApi.Repository.Implementations
 {
@@ -24,6 +25,7 @@ namespace BmesRestApi.Repository.Implementations
         }
         public void SaveBrand(Brand brand)
         {
+            //_context.Brands.FromSqlRaw("")
             _context.Brands.Add(brand);
             _context.SaveChanges();
         }

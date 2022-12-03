@@ -1,11 +1,13 @@
 ﻿using BmesRestApi.Messages.DataTransferObjects.Address;
 using BmesRestApi.Messages.DataTransferObjects.Cart;
 using BmesRestApi.Messages.DataTransferObjects.Customer;
+using BmesRestApi.Messages.DataTransferObjects.Order;
 using BmesRestApi.Messages.DataTransferObjects.Product;
 using BmesRestApi.Messages.DataTransferObjects.Shared;
 using BmesRestApi.Models.Address;
 using BmesRestApi.Models.Cart;
 using BmesRestApi.Models.Customer;
+using BmesRestApi.Models.Order;
 using BmesRestApi.Models.Product;
 using BmesRestApi.Models.Shared;
 

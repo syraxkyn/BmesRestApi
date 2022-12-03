@@ -172,9 +172,9 @@ namespace BmesRestApi.Services.Implementations
             return count;
         }
 
-        public decimal GetCartTotal()
+        public int GetCartTotal()
         {
-            decimal total = 0;
+            int total = 0;
 
             var cartItems = GetCartItems();
 

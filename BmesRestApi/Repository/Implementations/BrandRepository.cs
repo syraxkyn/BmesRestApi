@@ -14,20 +14,22 @@ namespace BmesRestApi.Repository.Implementations
 
         public Brand FindBrandById(long id)
         {
-            var brand = _context.Brands.Find(id);
+            var brand = _context.Brands.FromSqlRaw($"FindBrandById {id}").ToList().FirstOrDefault();
+            //var brand = _context.Brands.Find(id);
             return brand;
         }
 
         public IEnumerable<Brand> GetAllBrands()
         {
-            var categories = _context.Brands;
-            return categories;
-        }
+            var brands = _context.Brands.FromSqlRaw("SelectAllBrands").ToList();
+            //var brands = _context.Brands;
+            return brands;
+        }  
         public void SaveBrand(Brand brand)
         {
-            //_context.Brands.FromSqlRaw("")
-            _context.Brands.Add(brand);
-            _context.SaveChanges();
+            _context.Brands.FromSqlRaw($"CreateBrand {brand.Name},{brand.Slug},{brand.Description},{brand.MetaDescription},{brand.MetaKeywords}").ToList().FirstOrDefault();
+            //_context.Brands.Add(brand);
+            //_context.SaveChanges();
         }
         public void UpdateBrand(Brand brand)
         {

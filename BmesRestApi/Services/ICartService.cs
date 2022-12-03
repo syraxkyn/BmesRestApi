@@ -13,6 +13,6 @@ namespace BmesRestApi.Services
         FetchCartResponse FetchCart();
         IEnumerable<CartItem> GetCartItems();
         int CartItemsCount();
-        decimal GetCartTotal();
+        int GetCartTotal();
     }
 }

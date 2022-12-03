@@ -27,7 +27,7 @@ namespace BmesRestApi.Repository.Implementations
         }  
         public void SaveBrand(Brand brand)
         {
-            _context.Brands.FromSqlRaw($"CreateBrand {brand.Name},{brand.Slug},{brand.Description},{brand.MetaDescription},{brand.MetaKeywords}").ToList().FirstOrDefault();
+            _context.Brands.FromSqlRaw($"CreateBrand {brand.Name}").ToList().FirstOrDefault();
             //_context.Brands.Add(brand);
             //_context.SaveChanges();
         }

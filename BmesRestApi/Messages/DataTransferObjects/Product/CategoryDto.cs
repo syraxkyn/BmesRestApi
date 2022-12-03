@@ -6,9 +6,6 @@ namespace BmesRestApi.Messages.DataTransferObjects.Product
     {
         public String Name { get; set; }
         public string Slug { get; set; }
-        public string Description { get; set; }
-        public string MetaDescription { get; set; }
-        public string MetaKeywords { get; set; }
         public int CategoryStatus { get; set; }
         public DateTimeOffset CreateDate { get; set; }
         public DateTimeOffset ModifiedDate { get; set; }

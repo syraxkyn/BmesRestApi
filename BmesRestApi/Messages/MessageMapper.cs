@@ -20,9 +20,6 @@ namespace BmesRestApi.Messages
                 Id = brandDto.Id,
                 Name = brandDto.Name,
                 Slug = brandDto.Slug,
-                Description = brandDto.Description,
-                MetaDescription = brandDto.MetaDescription,
-                MetaKeywords = brandDto.MetaKeywords,
                 BrandStatus = (BrandStatus)brandDto.BrandStatus,
                 ModifiedDate = brandDto.ModifiedDate,
                 IsDeleted = brandDto.IsDeleted
@@ -37,9 +34,6 @@ namespace BmesRestApi.Messages
                 brandDto.Id = brand.Id;
                 brandDto.Name = brand.Name;
                 brandDto.Slug = brand.Slug;
-                brandDto.Description = brand.Description;
-                brandDto.MetaDescription = brand.MetaDescription;
-                brandDto.MetaKeywords = brand.MetaKeywords;
                 brandDto.BrandStatus = (int)brand.BrandStatus;
                 brandDto.ModifiedDate = brand.ModifiedDate;
                 brandDto.IsDeleted = brand.IsDeleted;
@@ -53,9 +47,6 @@ namespace BmesRestApi.Messages
                 Id = categoryDto.Id,
                 Name = categoryDto.Name,
                 Slug = categoryDto.Slug,
-                Description = categoryDto.Description,
-                MetaDescription = categoryDto.MetaDescription,
-                MetaKeywords = categoryDto.MetaKeywords,
                 CategoryStatus=(CategoryStatus)categoryDto.CategoryStatus,
                 ModifiedDate=categoryDto.ModifiedDate,
                 IsDeleted=categoryDto.IsDeleted
@@ -70,9 +61,6 @@ namespace BmesRestApi.Messages
                 Id = category.Id,
                 Name = category.Name,
                 Slug = category.Slug,
-                Description = category.Description,
-                MetaDescription = category.MetaDescription,
-                MetaKeywords = category.MetaKeywords,
                 CategoryStatus = (int)category.CategoryStatus,
                 ModifiedDate = category.ModifiedDate,
                 IsDeleted = category.IsDeleted

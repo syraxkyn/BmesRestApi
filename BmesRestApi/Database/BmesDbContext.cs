@@ -4,11 +4,12 @@ using BmesRestApi.Models.Customer;
 using BmesRestApi.Models.Order;
 using BmesRestApi.Models.Product;
 using BmesRestApi.Models.Shared;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace BmesRestApi.Database
 {
-    public class BmesDbContext:DbContext
+    public class BmesDbContext: IdentityDbContext<User>
     {
         public BmesDbContext(DbContextOptions<BmesDbContext> options) : base(options)
         {

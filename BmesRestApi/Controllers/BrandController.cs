@@ -1,11 +1,13 @@
 ﻿using BmesRestApi.Messages.Request.Brand;
 using BmesRestApi.Messages.Response.Brand;
 using BmesRestApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BmesRestApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController] 
     public class BrandController : ControllerBase
@@ -15,7 +17,7 @@ namespace BmesRestApi.Controllers
         {
             _brandService=brandService;
         }
-
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public ActionResult<GetBrandResponse> GetBrand(long id)
         {
@@ -26,6 +28,8 @@ namespace BmesRestApi.Controllers
             var getBrandResponse = _brandService.GetBrand(getBrandRequest);
             return getBrandResponse;
         }
+
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult<FetchBrandsResponse> GetBrands()
         {
@@ -33,12 +37,15 @@ namespace BmesRestApi.Controllers
             var fetchBrandsResponse = _brandService.GetBrands(fetchBrandsRequest);
             return fetchBrandsResponse;
         }
+        [Authorize(Roles ="Administrator")]
         [HttpPost]
         public ActionResult<CreateBrandResponse> PostBrand(CreateBrandRequest createBrandRequest)
         {
             var createBrandResponse = _brandService.SaveBrand(createBrandRequest);
             return createBrandResponse;
         }
+
+        [Authorize(Roles = "Administrator")]
         [HttpDelete("{id}")]
         public ActionResult<DeleteBrandResponse> DeleteBrand(long id)
         {
@@ -49,6 +56,8 @@ namespace BmesRestApi.Controllers
             var deleteBrandResponse = _brandService.DeleteBrand(deleteBrandRequest);
             return deleteBrandResponse;
         }
+
+        [Authorize(Roles = "Administrator")]
         [HttpPut]
         public ActionResult<UpdateBrandResponse> PutBrand(UpdateBrandRequest updateBrandRequest)
         {

@@ -27,7 +27,6 @@
   <ItemGroup>
     <Folder Include="Messages\Request\Cart\" />
     <Folder Include="Messages\Response\Cart\" />
-    <Folder Include="Infrastructure\" />
   </ItemGroup>
 
 </Project>

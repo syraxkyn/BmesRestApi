@@ -140,9 +140,7 @@ namespace BmesRestApi.Messages
             var customerDto = new CustomerDto
             {
                 Id = customer.Id,
-                FirstName = customer.Person.FirstName,
-                MiddleName = customer.Person.MiddleName,
-                LastName = customer.Person.LastName,
+                Name = customer.Person.Name,
                 EmailAddress = customer.Person.EmailAddress,
                 PhoneNumber = customer.Person.PhoneNumber,
                 Gender = (int)customer.Person.Gender,
@@ -159,9 +157,7 @@ namespace BmesRestApi.Messages
             var person = new Person
             {
                 Id = customerDto.Id,
-                FirstName = customerDto.FirstName,
-                MiddleName = customerDto.MiddleName,
-                LastName = customerDto.LastName,
+                Name = customerDto.Name,
                 EmailAddress = customerDto.EmailAddress,
                 PhoneNumber = customerDto.PhoneNumber,
                 Gender = (Gender)customerDto.Gender,
@@ -183,9 +179,7 @@ namespace BmesRestApi.Messages
             var personDto = new PersonDto
             {
                 Id = person.Id,
-                FirstName = person.FirstName,
-                MiddleName = person.MiddleName,
-                LastName = person.LastName,
+                Name = person.Name,
                 EmailAddress = person.EmailAddress,
                 PhoneNumber = person.PhoneNumber,
                 Gender = (int)person.Gender,
@@ -203,9 +197,7 @@ namespace BmesRestApi.Messages
             return new Person
             {
                 Id = personDto.Id,
-                FirstName = personDto.FirstName,
-                MiddleName = personDto.MiddleName,
-                LastName = personDto.LastName,
+                Name = personDto.Name,
                 EmailAddress = personDto.EmailAddress,
                 PhoneNumber = personDto.PhoneNumber,
                 Gender = (Gender)personDto.Gender,

@@ -66,8 +66,6 @@ builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
 builder.Services.AddTransient<ICartRepository, CartRepository>();
 builder.Services.AddTransient<ICartItemRepository, CartItemRepository>();
-
-builder.Services.AddTransient<IAddressRepository,AddressRepository>();
 builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
 builder.Services.AddTransient<IPersonRepository,PersonRepository>();
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();

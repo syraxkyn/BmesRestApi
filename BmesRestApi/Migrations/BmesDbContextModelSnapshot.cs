@@ -22,61 +22,6 @@ namespace BmesRestApi.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("BmesRestApi.Models.Address.Address", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
-
-                    b.Property<string>("AddressLine1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AddressLine2")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset>("CreateDate")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<long?>("CustomerId")
-                        .HasColumnType("bigint");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset>("ModifiedDate")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("State")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ZipCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
-
-                    b.ToTable("Addresses");
-                });
-
             modelBuilder.Entity("BmesRestApi.Models.Cart.Cart", b =>
                 {
                     b.Property<long>("Id")
@@ -176,9 +121,6 @@ namespace BmesRestApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
 
-                    b.Property<long>("AddressId")
-                        .HasColumnType("bigint");
-
                     b.Property<DateTimeOffset>("CreateDate")
                         .HasColumnType("datetimeoffset");
 
@@ -204,8 +146,6 @@ namespace BmesRestApi.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AddressId");
 
                     b.HasIndex("CustomerId");
 
@@ -673,13 +613,6 @@ namespace BmesRestApi.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("BmesRestApi.Models.Address.Address", b =>
-                {
-                    b.HasOne("BmesRestApi.Models.Customer.Customer", null)
-                        .WithMany("Addresses")
-                        .HasForeignKey("CustomerId");
-                });
-
             modelBuilder.Entity("BmesRestApi.Models.Cart.CartItem", b =>
                 {
                     b.HasOne("BmesRestApi.Models.Cart.Cart", "Cart")
@@ -712,12 +645,6 @@ namespace BmesRestApi.Migrations
 
             modelBuilder.Entity("BmesRestApi.Models.Order.Order", b =>
                 {
-                    b.HasOne("BmesRestApi.Models.Address.Address", "DeliveryAddress")
-                        .WithMany()
-                        .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("BmesRestApi.Models.Customer.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
@@ -725,8 +652,6 @@ namespace BmesRestApi.Migrations
                         .IsRequired();
 
                     b.Navigation("Customer");
-
-                    b.Navigation("DeliveryAddress");
                 });
 
             modelBuilder.Entity("BmesRestApi.Models.Order.OrderItem", b =>
@@ -825,8 +750,6 @@ namespace BmesRestApi.Migrations
 
             modelBuilder.Entity("BmesRestApi.Models.Customer.Customer", b =>
                 {
-                    b.Navigation("Addresses");
-
                     b.Navigation("Orders");
                 });
 

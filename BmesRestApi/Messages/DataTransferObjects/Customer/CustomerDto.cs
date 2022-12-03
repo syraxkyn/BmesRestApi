@@ -1,6 +1,6 @@
-﻿using System;
+﻿using BmesRestApi.Messages.DataTransferObjects.Order;
+using System;
 using System.Collections.Generic;
-using BmesRestApi.Messages.DataTransferObjects.Address;
 
 namespace BmesRestApi.Messages.DataTransferObjects.Customer
 {
@@ -17,7 +17,6 @@ namespace BmesRestApi.Messages.DataTransferObjects.Customer
         public DateTimeOffset CreateDate { get; set; }
         public DateTimeOffset ModifiedDate { get; set; }
         public bool IsDeleted { get; set; }
-        //public IEnumerable<OrderDto> Orders { get; set; }
-        public IEnumerable<AddressDto> Addresses { get; set; }
+        public IEnumerable<OrderDto> Orders { get; set; }
     }
 }

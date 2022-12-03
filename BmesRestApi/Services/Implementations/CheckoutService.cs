@@ -15,7 +15,6 @@ namespace BmesRestApi.Services.Implementations
         private MessageMapper _messageMapper;
         private ICustomerRepository _customerRepository;
         private IPersonRepository _personRepository;
-        private IAddressRepository _addressRepository;
         private IOrderItemRepository _orderItemRepository;
         private ICartRepository _cartRepository;
         private ICartItemRepository _cartItemRepository;
@@ -24,7 +23,6 @@ namespace BmesRestApi.Services.Implementations
         public CheckoutService(
             ICustomerRepository customerRepository,
             IPersonRepository personRepository,
-            IAddressRepository addressRepository,
             IOrderRepository orderRepository,
             IOrderItemRepository orderItemRepository,
             ICartRepository cartRepository,
@@ -36,7 +34,6 @@ namespace BmesRestApi.Services.Implementations
             _messageMapper = new MessageMapper();
             _customerRepository = customerRepository;
             _personRepository = personRepository;
-            _addressRepository = addressRepository;
             _orderItemRepository = orderItemRepository;
             _cartRepository = cartRepository;
             _cartItemRepository = cartItemRepository;
@@ -51,10 +48,6 @@ namespace BmesRestApi.Services.Implementations
             var person = customer.Person;
 
             _personRepository.SavePerson(person);
-
-            var address = _messageMapper.MapToAddress(checkoutRequest.Address);
-
-            _addressRepository.SaveAddress(address);
 
             customer.PersonId = person.Id;
             customer.Person = person;
@@ -75,8 +68,6 @@ namespace BmesRestApi.Services.Implementations
                     OrderTotal = orderTotal,
                     OrderItemTotal = cartTotal,
                     ShippingCharge = shippingCharge,
-                    AddressId = address.Id,
-                    DeliveryAddress = address,
                     CustomerId = customer.Id,
                     Customer = customer,
                     OrderStatus = OrderStatus.Submitted

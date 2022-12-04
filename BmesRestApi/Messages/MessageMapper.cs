@@ -71,19 +71,9 @@ namespace BmesRestApi.Messages
             var product = new Product
             {
                 Id = productDto.Id,
-                Name = productDto.Name,
-                Slug = productDto.Slug,
-                Description = productDto.Description,
-                MetaDescription = productDto.MetaDescription,
-                MetaKeywords = productDto.MetaKeywords,
-                SKU=productDto.SKU,
-                Model=productDto.Model,
+                Title = productDto.Title,
                 Price = productDto.Price,
-                SalePrice=productDto.SalePrice,
-                OldPrice=productDto.OldPrice,
-                ImageUrl=productDto.ImageUrl,
                 QuantityInStock=productDto.QuantityInStock,
-                IsBestseller=productDto.IsBestseller,
                 CategoryId=productDto.CategoryId,
                 BrandId=productDto.BrandId,
                 ProductStatus=(ProductStatus)productDto.ProductStatus,
@@ -99,21 +89,11 @@ namespace BmesRestApi.Messages
             if (product!=null)
             {
                 productDto.Id = product.Id;
-                productDto.Name = product.Name;
-                productDto.Slug = product.Slug;
-                productDto.Description = product.Description;
-                productDto.MetaDescription = product.MetaDescription;
-                productDto.MetaKeywords = product.MetaKeywords;
-                productDto.SKU=product.SKU;
-                productDto.Model=product.Model;
+                productDto.Title = product.Title;
                 productDto.Price=product.Price;
-                productDto.SalePrice=product.SalePrice;
-                productDto.OldPrice=product.OldPrice;
-                productDto.ImageUrl=product.ImageUrl;
                 productDto.QuantityInStock=product.QuantityInStock;
                 productDto.CategoryId=product.CategoryId;
                 productDto.BrandId=product.BrandId;
-                productDto.IsBestseller= product.IsBestseller;
                 productDto.ProductStatus = (int)product.ProductStatus;
                 productDto.CreateDate = product.CreateDate;
                 productDto.ModifiedDate = product.ModifiedDate;

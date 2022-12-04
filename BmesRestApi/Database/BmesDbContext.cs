@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BmesRestApi.Database
 {
-    public class BmesDbContext: IdentityDbContext<User>
+    public class BmesDbContext: DbContext
     {
         public BmesDbContext(DbContextOptions<BmesDbContext> options) : base(options)
         {

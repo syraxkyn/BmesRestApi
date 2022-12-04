@@ -54,8 +54,13 @@ builder.Configuration.GetConnectionString("DefaultConnection")
 )
 );
 
+builder.Services.AddDbContext<BmesIdentityDbContext>(options => options.UseSqlServer(
+builder.Configuration.GetConnectionString("IdentityConnection")
+)
+);
+
 builder.Services.AddIdentity<User,IdentityRole>()
-    .AddEntityFrameworkStores<BmesDbContext>();
+    .AddEntityFrameworkStores<BmesIdentityDbContext>();
 
 //Extension method that configured JWT
 builder.Services.AddJwtAuth(builder.Configuration);
@@ -101,7 +106,7 @@ app.UseAuthorization();
 app.MapControllers();
 using (var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
 {
-    var dbContext = serviceScope.ServiceProvider.GetService<BmesDbContext>();
+    var dbContext = serviceScope.ServiceProvider.GetService<BmesIdentityDbContext>();
     var roleManager = serviceScope.ServiceProvider.GetService<RoleManager<IdentityRole>>();
     var userManager = serviceScope.ServiceProvider.GetService<UserManager<User>>();
     // Create the Db if it doesn't exist and applies any pending migration.

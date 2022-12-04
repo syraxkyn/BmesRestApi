@@ -8,7 +8,7 @@ namespace BmesRestApi.Database
 {
     public class IdentityDbSeeder
     {
-        public static void Seed(BmesDbContext dbContext,
+        public static void Seed(BmesIdentityDbContext dbContext,
                               RoleManager<IdentityRole> roleManager,
                               UserManager<User> userManager)
         {
@@ -23,7 +23,7 @@ namespace BmesRestApi.Database
         }
 
         private static async Task CreateUsers(
-            BmesDbContext dbContext,
+            BmesIdentityDbContext dbContext,
             RoleManager<IdentityRole> roleManager,
             UserManager<User> userManager)
         {

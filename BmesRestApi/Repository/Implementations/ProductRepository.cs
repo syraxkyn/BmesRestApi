@@ -20,6 +20,7 @@ namespace BmesRestApi.Repository.Implementations
 
         public IEnumerable<Product> GetAllProducts()
         {
+            //var products = _context.Products.FromSqlRaw("p_products_select_innerJoin_categories_brands").ToList();
             var products = _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.Brand);
@@ -27,8 +28,10 @@ namespace BmesRestApi.Repository.Implementations
         }
         public void SaveProduct(Product product)
         {
-            _context.Products.Add(product);
-            _context.SaveChanges();
+            //_context.Products.FromSqlRaw($"p_products_insert 'note',2000,14,11,12").ToList().FirstOrDefault();
+            _context.Products.FromSqlRaw($"p_products_insert '{product.Title}',{product.Price},{product.QuantityInStock},{product.CategoryId},{product.BrandId}").ToList().FirstOrDefault();
+            //_context.Products.Add(product);
+            //_context.SaveChanges();
         }
         public void UpdateProduct(Product product)
         {

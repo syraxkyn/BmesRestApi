@@ -12,6 +12,5 @@ namespace BmesRestApi.Messages.DataTransferObjects.Shared
         public string DateOfBirth { get; set; }
         public DateTimeOffset CreateDate { get; set; }
         public DateTimeOffset ModifiedDate { get; set; }
-        public bool IsDeleted { get; set; }
     }
 }

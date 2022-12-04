@@ -9,7 +9,6 @@ namespace BmesRestApi.Messages.DataTransferObjects.Product
         public int CategoryStatus { get; set; }
         public DateTimeOffset CreateDate { get; set; }
         public DateTimeOffset ModifiedDate { get; set; }
-        public bool IsDeleted { get; set; }
         public long Id { get; set; }
     }
 }

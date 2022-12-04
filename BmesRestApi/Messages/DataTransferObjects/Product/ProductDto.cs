@@ -13,6 +13,5 @@ namespace BmesRestApi.Messages.DataTransferObjects.Product
         public int ProductStatus { get; set; }
         public DateTimeOffset CreateDate { get; set; }
         public DateTimeOffset ModifiedDate { get; set; }
-        public bool IsDeleted { get; set; }
     }
 }

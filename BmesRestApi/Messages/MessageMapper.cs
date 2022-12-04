@@ -21,8 +21,7 @@ namespace BmesRestApi.Messages
                 Name = brandDto.Name,
                 Slug = brandDto.Slug,
                 BrandStatus = (BrandStatus)brandDto.BrandStatus,
-                ModifiedDate = brandDto.ModifiedDate,
-                IsDeleted = brandDto.IsDeleted
+                ModifiedDate = brandDto.ModifiedDate
             };
             return brand;
         }
@@ -36,7 +35,6 @@ namespace BmesRestApi.Messages
                 brandDto.Slug = brand.Slug;
                 brandDto.BrandStatus = (int)brand.BrandStatus;
                 brandDto.ModifiedDate = brand.ModifiedDate;
-                brandDto.IsDeleted = brand.IsDeleted;
             }
             return brandDto;
         }
@@ -48,8 +46,7 @@ namespace BmesRestApi.Messages
                 Name = categoryDto.Name,
                 Slug = categoryDto.Slug,
                 CategoryStatus=(CategoryStatus)categoryDto.CategoryStatus,
-                ModifiedDate=categoryDto.ModifiedDate,
-                IsDeleted=categoryDto.IsDeleted
+                ModifiedDate=categoryDto.ModifiedDate
             };
             return category;
         }
@@ -62,8 +59,7 @@ namespace BmesRestApi.Messages
                 Name = category.Name,
                 Slug = category.Slug,
                 CategoryStatus = (int)category.CategoryStatus,
-                ModifiedDate = category.ModifiedDate,
-                IsDeleted = category.IsDeleted
+                ModifiedDate = category.ModifiedDate
             };
         }
         public Product MapToProduct(ProductDto productDto)
@@ -78,8 +74,7 @@ namespace BmesRestApi.Messages
                 BrandId=productDto.BrandId,
                 ProductStatus=(ProductStatus)productDto.ProductStatus,
                 CreateDate=productDto.CreateDate,
-                ModifiedDate=productDto.ModifiedDate,
-                IsDeleted=productDto.IsDeleted
+                ModifiedDate=productDto.ModifiedDate
             };
             return product;
         }
@@ -97,7 +92,6 @@ namespace BmesRestApi.Messages
                 productDto.ProductStatus = (int)product.ProductStatus;
                 productDto.CreateDate = product.CreateDate;
                 productDto.ModifiedDate = product.ModifiedDate;
-                productDto.IsDeleted = product.IsDeleted;
             }
             return productDto;
         }
@@ -114,8 +108,7 @@ namespace BmesRestApi.Messages
                 Gender = (int)customer.Person.Gender,
                 DateOfBirth = customer.Person.DateOfBirth,
                 CreateDate = customer.CreateDate,
-                ModifiedDate = customer.ModifiedDate,
-                IsDeleted = customer.IsDeleted
+                ModifiedDate = customer.ModifiedDate
             };
 
             return customerDto;
@@ -131,8 +124,7 @@ namespace BmesRestApi.Messages
                 Gender = (Gender)customerDto.Gender,
                 DateOfBirth = customerDto.DateOfBirth,
                 CreateDate = customerDto.CreateDate,
-                ModifiedDate = customerDto.ModifiedDate,
-                IsDeleted = customerDto.IsDeleted
+                ModifiedDate = customerDto.ModifiedDate
             };
 
             return new Customer
@@ -153,8 +145,7 @@ namespace BmesRestApi.Messages
                 Gender = (int)person.Gender,
                 DateOfBirth = person.DateOfBirth,
                 CreateDate = person.CreateDate,
-                ModifiedDate = person.ModifiedDate,
-                IsDeleted = person.IsDeleted
+                ModifiedDate = person.ModifiedDate
             };
 
             return personDto;
@@ -171,8 +162,7 @@ namespace BmesRestApi.Messages
                 Gender = (Gender)personDto.Gender,
                 DateOfBirth = personDto.DateOfBirth,
                 CreateDate = personDto.CreateDate,
-                ModifiedDate = personDto.ModifiedDate,
-                IsDeleted = personDto.IsDeleted
+                ModifiedDate = personDto.ModifiedDate
             };
         }
 
@@ -184,7 +174,6 @@ namespace BmesRestApi.Messages
                 cartDto.Id = cart.Id;
                 cartDto.CreateDate= cart.CreateDate;
                 cartDto.ModifiedDate= cart.ModifiedDate;
-                cartDto.IsDeleted= cart.IsDeleted;
                 cartDto.CartStatus=(int)cart.CartStatus;
                 cartDto.UniqueCartId=cart.UniqueCartId;
             }
@@ -201,7 +190,6 @@ namespace BmesRestApi.Messages
                 cart.CartStatus = (CartStatus)cartDto.CartStatus;
                 cart.CreateDate= cartDto.CreateDate;
                 cart.ModifiedDate= cartDto.ModifiedDate;
-                cart.IsDeleted= cartDto.IsDeleted;
             }
             return cart;
         }
@@ -246,8 +234,7 @@ namespace BmesRestApi.Messages
                 CustomerId = order.CustomerId,
                 OrderStatus = (int)order.OrderStatus,
                 CreateDate = order.CreateDate,
-                ModifiedDate = order.ModifiedDate,
-                IsDeleted = order.IsDeleted
+                ModifiedDate = order.ModifiedDate
             };
 
             return orderDto;
@@ -264,8 +251,7 @@ namespace BmesRestApi.Messages
                 CustomerId = orderDto.CustomerId,
                 OrderStatus = (OrderStatus)orderDto.OrderStatus,
                 CreateDate = orderDto.CreateDate,
-                ModifiedDate = orderDto.ModifiedDate,
-                IsDeleted = orderDto.IsDeleted
+                ModifiedDate = orderDto.ModifiedDate
             };
         }
 

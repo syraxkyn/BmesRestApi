@@ -14,7 +14,6 @@ namespace BmesRestApi.Messages.DataTransferObjects.Customer
         public string DateOfBirth { get; set; }
         public DateTimeOffset CreateDate { get; set; }
         public DateTimeOffset ModifiedDate { get; set; }
-        public bool IsDeleted { get; set; }
         public IEnumerable<OrderDto> Orders { get; set; }
     }
 }

@@ -10,7 +10,6 @@ namespace BmesRestApi.Messages.DataTransferObjects.Order
         public int OrderItemTotal { get; set; }
         public int ShippingCharge { get; set; }
         public long CustomerId { get; set; }
-        public int OrderStatus { get; set; }
         public IEnumerable<OrderItemDto> OrderItems { get; set; }
         public DateTimeOffset CreateDate { get; set; }
         public DateTimeOffset ModifiedDate { get; set; }

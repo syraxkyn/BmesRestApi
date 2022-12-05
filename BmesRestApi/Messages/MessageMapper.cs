@@ -20,7 +20,6 @@ namespace BmesRestApi.Messages
                 Id = brandDto.Id,
                 Name = brandDto.Name,
                 Slug = brandDto.Slug,
-                BrandStatus = (BrandStatus)brandDto.BrandStatus,
                 ModifiedDate = brandDto.ModifiedDate
             };
             return brand;
@@ -33,7 +32,6 @@ namespace BmesRestApi.Messages
                 brandDto.Id = brand.Id;
                 brandDto.Name = brand.Name;
                 brandDto.Slug = brand.Slug;
-                brandDto.BrandStatus = (int)brand.BrandStatus;
                 brandDto.ModifiedDate = brand.ModifiedDate;
             }
             return brandDto;
@@ -45,7 +43,6 @@ namespace BmesRestApi.Messages
                 Id = categoryDto.Id,
                 Name = categoryDto.Name,
                 Slug = categoryDto.Slug,
-                CategoryStatus=(CategoryStatus)categoryDto.CategoryStatus,
                 ModifiedDate=categoryDto.ModifiedDate
             };
             return category;
@@ -58,7 +55,6 @@ namespace BmesRestApi.Messages
                 Id = category.Id,
                 Name = category.Name,
                 Slug = category.Slug,
-                CategoryStatus = (int)category.CategoryStatus,
                 ModifiedDate = category.ModifiedDate
             };
         }
@@ -174,7 +170,6 @@ namespace BmesRestApi.Messages
                 cartDto.Id = cart.Id;
                 cartDto.CreateDate= cart.CreateDate;
                 cartDto.ModifiedDate= cart.ModifiedDate;
-                cartDto.CartStatus=(int)cart.CartStatus;
                 cartDto.UniqueCartId=cart.UniqueCartId;
             }
             return cartDto;
@@ -187,7 +182,6 @@ namespace BmesRestApi.Messages
             {
                 cart.Id = cartDto.Id;
                 cart.UniqueCartId=cartDto.UniqueCartId;
-                cart.CartStatus = (CartStatus)cartDto.CartStatus;
                 cart.CreateDate= cartDto.CreateDate;
                 cart.ModifiedDate= cartDto.ModifiedDate;
             }
@@ -232,7 +226,6 @@ namespace BmesRestApi.Messages
                 OrderItemTotal = order.OrderTotal,
                 ShippingCharge = order.ShippingCharge,
                 CustomerId = order.CustomerId,
-                OrderStatus = (int)order.OrderStatus,
                 CreateDate = order.CreateDate,
                 ModifiedDate = order.ModifiedDate
             };
@@ -249,7 +242,6 @@ namespace BmesRestApi.Messages
                 OrderItemTotal = orderDto.OrderTotal,
                 ShippingCharge = orderDto.ShippingCharge,
                 CustomerId = orderDto.CustomerId,
-                OrderStatus = (OrderStatus)orderDto.OrderStatus,
                 CreateDate = orderDto.CreateDate,
                 ModifiedDate = orderDto.ModifiedDate
             };

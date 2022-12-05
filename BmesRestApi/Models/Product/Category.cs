@@ -6,6 +6,5 @@ namespace BmesRestApi.Models.Product
     {
         public String Name { get; set; }
         public string Slug { get; set; }
-        public CategoryStatus CategoryStatus { get; set; }
     }
 }

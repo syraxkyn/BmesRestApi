@@ -10,7 +10,6 @@
         public int ShippingCharge { get; set; }
         public long CustomerId { get; set; }
         public Customer Customer { get; set; }
-        public OrderStatus OrderStatus { get; set; }
         public IEnumerable<OrderItem> OrderItems { get; set; }
     }
 }

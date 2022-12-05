@@ -4,6 +4,7 @@ using BmesRestApi.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BmesRestApi.Migrations
 {
     [DbContext(typeof(BmesDbContext))]
-    partial class BmesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221205144142_deletedStatusFromDb")]
+    partial class deletedStatusFromDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -69,8 +69,7 @@ namespace BmesRestApi.Services.Implementations
                     OrderItemTotal = cartTotal,
                     ShippingCharge = shippingCharge,
                     CustomerId = _customerRepository.GetLastCustomerId(),
-                    Customer = customer,
-                    OrderStatus = OrderStatus.Submitted
+                    Customer = customer
                 };
 
                 _orderRepository.SaveOrder(order);

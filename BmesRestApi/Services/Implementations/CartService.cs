@@ -70,8 +70,7 @@ namespace BmesRestApi.Services.Implementations
                 {
                     var newCart = new Cart
                     {
-                        UniqueCartId = UniqueCartId(),
-                        CartStatus = CartStatus.Open
+                        UniqueCartId = UniqueCartId()
                     };
 
                     _cartRepository.SaveCart(newCart);

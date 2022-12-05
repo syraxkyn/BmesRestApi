@@ -1,5 +1,7 @@
 ﻿using BmesRestApi.Database;
 using BmesRestApi.Models.Customer;
+using BmesRestApi.Models.Shared;
+using Microsoft.EntityFrameworkCore;
 
 namespace BmesRestApi.Repository.Implementations
 {
@@ -17,19 +19,25 @@ namespace BmesRestApi.Repository.Implementations
             var customer = _context.Customers.Find(id);
             return customer;
         }
+        public int GetLastCustomerId()
+        {
+            Customer customer = _context.Customers.FromSqlRaw("Select * from Customers where id=(select max(id) from Customers)").ToList().FirstOrDefault();
+            return (int)customer.Id;
+        }
 
         public IEnumerable<Customer> GetAllCustomers()
         {
             var customers = _context.Customers;
             return customers;
         }
-
         public void SaveCustomer(Customer customer)
         {
-            _context.Customers.Add(customer);
-            _context.SaveChanges();
-        }
+            _context.Customers.FromSqlRaw($"p_customers_insert {customer.PersonId}").ToList().FirstOrDefault();
 
+            //_context.People.FromSqlRaw($"p_customers_insert {customer.PersonId}").ToList().FirstOrDefault();
+            //_context.Customers.Add(customer);
+            //_context.SaveChanges();
+        }
         public void UpdateCustomer(Customer customer)
         {
             _context.Customers.Update(customer);

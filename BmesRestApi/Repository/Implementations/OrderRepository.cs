@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using BmesRestApi.Database;
+using BmesRestApi.Models.Customer;
 using BmesRestApi.Models.Order;
+using Microsoft.EntityFrameworkCore;
 
 namespace BmesRestApi.Repositories.Implementations
 {
@@ -27,10 +29,16 @@ namespace BmesRestApi.Repositories.Implementations
 
         public void SaveOrder(Order order)
         {
-            _context.Orders.Add(order);
-            _context.SaveChanges();
+            _context.Orders.FromSqlRaw($"p_orders_insert '{order.OrderTotal}',{order.OrderItemTotal},{order.ShippingCharge},{order.CustomerId},9").ToList().FirstOrDefault();
+            //_context.Orders.Add(order);
+            //_context.SaveChanges();
         }
 
+        //public int GetLastOrderId()
+        //{
+        //    Order order = _context.Orders.FromSqlRaw("Select * from Orders where id=(select max(id) from Orders)").ToList().FirstOrDefault();
+        //    return (int)order.Id;
+        //}
         public void UpdateOrder(Order order)
         {
             _context.Orders.Update(order);

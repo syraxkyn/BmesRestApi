@@ -60,7 +60,7 @@ namespace BmesRestApi.Services.Implementations
             {
                 var cartItems = _cartItemRepository.FindCartItemsByCartId(cart.Id);
                 var cartTotal = _cartService.GetCartTotal();
-                int shippingCharge = 0;
+                int shippingCharge = 15;
                 var orderTotal = cartTotal + shippingCharge;
 
                 var order = new Order
@@ -68,7 +68,7 @@ namespace BmesRestApi.Services.Implementations
                     OrderTotal = orderTotal,
                     OrderItemTotal = cartTotal,
                     ShippingCharge = shippingCharge,
-                    CustomerId = customer.Id,
+                    CustomerId = _customerRepository.GetLastCustomerId(),
                     Customer = customer,
                     OrderStatus = OrderStatus.Submitted
                 };

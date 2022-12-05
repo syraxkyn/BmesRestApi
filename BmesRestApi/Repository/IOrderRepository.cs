@@ -10,5 +10,6 @@ namespace BmesRestApi.Repositories
         void SaveOrder(Order order);
         void UpdateOrder(Order order);
         void DeleteOrder(Order order);
+        //public int GetLastOrderId();
     }
 }

@@ -9,5 +9,6 @@ namespace BmesRestApi.Repository
         void SaveCustomer(Customer customer);
         void UpdateCustomer(Customer customer);
         void DeleteCustomer(Customer customer);
+        int GetLastCustomerId();
     }
 }

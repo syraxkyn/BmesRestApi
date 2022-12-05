@@ -2,6 +2,7 @@
 using System.Linq;
 using BmesRestApi.Database;
 using BmesRestApi.Models.Order;
+using Microsoft.EntityFrameworkCore;
 
 namespace BmesRestApi.Repositories.Implementations
 {
@@ -34,7 +35,9 @@ namespace BmesRestApi.Repositories.Implementations
 
         public void SaveOrderItem(OrderItem orderItem)
         {
+            //_context.OrderItems.FromSqlRaw($"p_orderItems_insert '{orderItem.Quantity}',{orderItem.OrderId},{orderItem.ProductId}").ToList().FirstOrDefault();
             _context.OrderItems.Add(orderItem);
+            //_context.SaveChanges();
         }
 
         public void UpdateOrderItem(OrderItem orderItem)

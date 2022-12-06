@@ -65,6 +65,9 @@ namespace BmesRestApi.Messages
                 Id = productDto.Id,
                 Title = productDto.Title,
                 Price = productDto.Price,
+                RAM= productDto.RAM,
+                Graphics= productDto.Graphics,
+                CPU = productDto.CPU,
                 QuantityInStock=productDto.QuantityInStock,
                 CategoryId=productDto.CategoryId,
                 BrandId=productDto.BrandId,
@@ -82,6 +85,9 @@ namespace BmesRestApi.Messages
                 productDto.Id = product.Id;
                 productDto.Title = product.Title;
                 productDto.Price=product.Price;
+                productDto.RAM=product.RAM;
+                productDto.CPU = product.CPU;
+                productDto.Graphics = product.Graphics;
                 productDto.QuantityInStock=product.QuantityInStock;
                 productDto.CategoryId=product.CategoryId;
                 productDto.BrandId=product.BrandId;

@@ -6,6 +6,9 @@ namespace BmesRestApi.Messages.DataTransferObjects.Product
     {
         public long Id { get; set; }    
         public string Title { get; set; }
+        public string Graphics { get; set; }
+        public string CPU { get; set; }
+        public int RAM { get; set; }
         public int Price { get; set; }
         public int QuantityInStock { get; set; }
         public long CategoryId { get; set; }

@@ -6,6 +6,9 @@ namespace BmesRestApi.Models.Product
     {
         public string Title { get; set; }
         public int Price { get; set; }
+        public string Graphics { get; set; }
+        public string CPU { get; set; }
+        public int RAM { get; set; }
         public int QuantityInStock { get; set; }
         public long CategoryId { get; set; }
         public Category Category { get; set; }

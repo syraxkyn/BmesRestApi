@@ -29,13 +29,13 @@ namespace BmesRestApi.Repository.Implementations
         public void SaveProduct(Product product)
         {
             //_context.Products.FromSqlRaw($"p_products_insert 'note',2000,14,11,12").ToList().FirstOrDefault();
-            _context.Products.FromSqlRaw($"p_products_insert '{product.Title}',{product.Price},{product.QuantityInStock},{product.CategoryId},{product.BrandId}").ToList().FirstOrDefault();
+            _context.Products.FromSqlRaw($"p_products_insert '{product.Title}',{product.Price},{product.QuantityInStock},{product.CategoryId},{product.BrandId},{product.CPU},{product.Graphics},{product.RAM}").ToList().FirstOrDefault();//{product.CPU}
             //_context.Products.Add(product);
             //_context.SaveChanges();
         }
         public void UpdateProduct(Product product)
         {
-            _context.Products.FromSqlRaw($"p_products_update {product.Id},{product.Title},{product.Price},{product.QuantityInStock},{product.CategoryId},{product.BrandId}").ToList().FirstOrDefault();
+            _context.Products.FromSqlRaw($"p_products_update {product.Id},{product.Title},{product.Price},{product.QuantityInStock},{product.CategoryId},{product.BrandId},{product.CPU},{product.Graphics},{product.RAM}").ToList().FirstOrDefault();
             //_context.Products.Update(product);
             //_context.SaveChanges();
         }

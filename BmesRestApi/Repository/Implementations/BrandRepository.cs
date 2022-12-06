@@ -27,19 +27,28 @@ namespace BmesRestApi.Repository.Implementations
         }  
         public void SaveBrand(Brand brand)
         {
-            _context.Brands.FromSqlRaw($"p_brands_insert {brand.Name}, {brand.Slug}").ToList().FirstOrDefault();
+            if (brand != null)
+            {
+                _context.Brands.FromSqlRaw($"p_brands_insert {brand.Name}, {brand.Slug}").ToList().FirstOrDefault();
+            }
             //_context.Brands.Add(brand);
             //_context.SaveChanges();
         }
         public void UpdateBrand(Brand brand)
         {
-            _context.Brands.FromSqlRaw($"p_brands_update {brand.Id}, {brand.Name},{brand.Slug}").ToList().FirstOrDefault();
+            if (brand != null)
+            {
+                _context.Brands.FromSqlRaw($"p_brands_update {brand.Id}, {brand.Name},{brand.Slug}").ToList().FirstOrDefault();
+            }
             //_context.Brands.Update(brand);
             //_context.SaveChanges();
         }
         public void DeleteBrand(Brand brand)
         {
-            _context.Brands.FromSqlRaw($"p_brands_delete {brand.Id}").ToList().FirstOrDefault();
+            if (brand != null)
+            {
+                _context.Brands.FromSqlRaw($"p_brands_delete {brand.Id}").ToList().FirstOrDefault();
+            }
         }
     }
 }

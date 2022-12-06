@@ -29,7 +29,7 @@ namespace BmesRestApi.Repositories.Implementations
 
         public void SaveOrder(Order order)
         {
-            _context.Orders.FromSqlRaw($"p_orders_insert '{order.OrderTotal}',{order.OrderItemTotal},{order.ShippingCharge},{order.CustomerId},9").ToList().FirstOrDefault();
+            _context.Orders.FromSqlRaw($"p_orders_insert '{order.OrderTotal}',{order.OrderItemTotal},{order.ShippingCharge},{order.CustomerId}").ToList().FirstOrDefault();
             //_context.Orders.Add(order);
             //_context.SaveChanges();
         }

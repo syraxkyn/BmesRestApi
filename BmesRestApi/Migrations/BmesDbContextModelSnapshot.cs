@@ -231,11 +231,19 @@ namespace BmesRestApi.Migrations
                     b.Property<long>("BrandId")
                         .HasColumnType("bigint");
 
+                    b.Property<string>("CPU")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<long>("CategoryId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTimeOffset>("CreateDate")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Graphics")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset>("ModifiedDate")
                         .HasColumnType("datetimeoffset");
@@ -247,6 +255,9 @@ namespace BmesRestApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("QuantityInStock")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RAM")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")

@@ -26,9 +26,9 @@ namespace BmesRestApi.Repository.Implementations
         }
         public void SaveCart(Cart cart)
         {
-            _context.Carts.FromSqlRaw($"p_carts_insert '{cart.UniqueCartId}', 0").ToList().FirstOrDefault();
-            //_context.Carts.Add(cart);
-            //_context.SaveChanges();
+            //_context.Carts.FromSqlRaw($"p_carts_insert").ToList().FirstOrDefault();
+            _context.Carts.Add(cart);
+            _context.SaveChanges();
         }
         public void UpdateCart(Cart cart)
         {
